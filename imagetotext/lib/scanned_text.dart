@@ -8,6 +8,12 @@ class ScannedText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.pop(context);
+        },
+        child: const Icon(Icons.repeat),
+      ),
       body: SafeArea(
         child: SingleChildScrollView(
           child: SelectableText(

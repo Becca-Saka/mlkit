@@ -1,9 +1,7 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:google_ml_kit/google_ml_kit.dart';
 import 'package:image_picker/image_picker.dart';
-
 import 'scanned_text.dart';
 
 class GetImage extends StatefulWidget {
@@ -71,8 +69,15 @@ class _GetImageState extends State<GetImage> {
         ),
       ],
       body: image == null
-          ? Container(
-              color: Colors.green,
+          ? Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(
+                padding: const EdgeInsets.all(8),
+                decoration: BoxDecoration(
+                  color: Colors.grey.withOpacity(0.8),
+                  border: Border.all(color: Colors.black, width: 4),
+                ),
+              ),
             )
           : Image.file(
               File(image!.path),
